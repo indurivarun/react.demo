@@ -17,7 +17,7 @@ run-name: Deploy ${{ github.ref_name }} to ${{ inputs.environment }} by @${{ git
 
 jobs:
   dev-deploy:
-    uses: indurivarun/pipeline.actions/.github/workflows/dev-deploy.yaml
+    uses: indurivarun/pipeline.actions/.github/workflows/dev-deploy.yaml@main
     permissions:
       id-token: write
       contents: read
