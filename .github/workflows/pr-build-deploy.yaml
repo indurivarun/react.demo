@@ -1,0 +1,19 @@
+---
+name: Build and Deploy
+
+on:
+  pull_request
+
+run-name: Deploy ${{ github.ref_name }} to ${{ inputs.environment }} by @${{ github.actor }}
+
+jobs:
+  dev-deploy:
+    uses: indurivarun/pipeline.actions/.github/workflows/pr-deploy.yaml@main
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    with:
+      project-type: reactjs
+      environment: dev
+    secrets: inherit
